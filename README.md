@@ -27,7 +27,7 @@ The ```title-footer``` folder of the ```plugin``` folder has to be copied to the
 
 ##CSS
 
-The CSS of the Reveal.js-Title-Footer plugin is included dynamically when it is initilizated. However, if we configure the presentation not to include the Reveal.js-Title-Footer footer in the first page, this will be shown until the CSS is loaded dynamically, causing an ugly effect. To avoid it, include the CSS in the header of the Reveal.js presentation, with this line:
+The CSS of the Reveal.js-Title-Footer plugin is included dynamically when it is initialized. However, if we configure the presentation not to include the Reveal.js-Title-Footer footer in the first page, this will be shown until the CSS is loaded dynamically, causing an ugly effect. To avoid it, include the CSS in the header of the Reveal.js presentation, with this line:
 
 ```<link rel="stylesheet" href="plugin/title-footer/title-footer.css">```
 

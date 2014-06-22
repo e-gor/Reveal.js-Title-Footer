@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Reveal.js-TOC-Progress - LaTeX Beamer-like progress indicator according to table of contents for Reveal.js HTML presentations</title>
+	<title>Reveal.js-Title-Footer - Footer showing title for Reveal.js HTML presentations</title>
 
-	<meta name="description" content="Reveal.js-TOC-Progress - LaTeX Beamer-like progress indicator according to table of contents for Reveal.js HTML presentations">
+	<meta name="description" content="Reveal.js-Title-Footer - Footer showing title for Reveal.js HTML presentations">
 	<meta name="author" content="Igor Leturia">
 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,8 +20,8 @@
 	<!-- For syntax highlighting -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<!-- TOC-Progress plugin -->
-	<link rel="stylesheet" href="plugin/toc-progress/toc-progress.css">
+	<!-- Title-Footer plugin -->
+	<link rel="stylesheet" href="plugin/title-footer/title-footer.css">
 
 	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 	<script>
@@ -48,8 +48,8 @@
 	<section>
 
 		<section data-state="no-toc-progress">
-			<h1 class="no-toc-progress">Reveal.js-TOC-Progress</h1>
-			<h3>LaTeX Beamer-like progress indicator according to table of contents for Reveal.js HTML presentations</h3>
+			<h1 class="no-toc-progress">Reveal.js-Title-Footer</h1>
+			<h3>Footer showing title for Reveal.js HTML presentations</h3>
 			<p>
 				<small>Created by <a href="https://github.com/e-gor">Igor Leturia <em>e-gor</em></a> / <a href="http://twitter.com/ileturia">@ileturia</a> / <a href="http://eibar.org/blogak/e-gorblog">http://eibar.org/blogak/e-gorblog</a></small>
 			</p>
@@ -64,31 +64,18 @@
 		</section>
 
 		<section>
-			<h3>What is Reveal.js-TOC-Progress?</h3>
-			<p>Reveal.js-TOC-Progress is a plugin for the Reveal.js framework for HTML presentations (<a href="https://github.com/hakimel/reveal.js">https://github.com/hakimel/reveal.js</a>).</p>
+			<h3>What is Reveal.js-Title-Footer?</h3>
+			<p>Reveal.js-Title-Footer is a plugin for the Reveal.js framework for HTML presentations (<a href="https://github.com/hakimel/reveal.js">https://github.com/hakimel/reveal.js</a>).</p>
 		</section>
 
 		<section>
-			<h3>What does Reveal.js-TOC-Progress do?</h3>
-			<p>Reveal.js-TOC-Progress includes a footer in all the slides of a Reveal.js presentation (with optional exclusion of some slides) that will show the progress in relation to the table of contents, in a similar way as in a LaTeX-Beamer presentation.</p>
-		</section>
-
-		<section>
-			<h3>Example</h3>
-			<p>You can see it working at the bottom of this slide and any other slide except the title.</p>
-		</section>
-
-		<section>
-			<h3>Behaviour</h3>
-			<p>The footer has two columns. The left column shows a list of the main sections (except those we explicitly tell to ignore), highlighting the section we are now in. The right column shows the subsections of the main section we are now in (again with the option of ignoring those we do not want to show), highlighting the subsection we are currently at.</p>
+			<h3>What does Reveal.js-Title-Footer do?</h3>
+			<p>Reveal.js-Title-Footer includes a footer in all the slides of a Reveal.js presentation (with optional exclusion of some slides) that will show the title of the presentation.</p>
 		</section>
 
 		<section>
 			<h3>Configurable options</h3>
-			<p>The behaviour for too long section or subsection lists is configurable. The font of the text can be reduced to make the list fit in the footer, or the list will scroll when necessary.</p>
-		</section>
-
-		<section>
+			<p>The title to show on the footer is configurable.</p>
 			<p>The background color of the footer is also configurable.</p>
 		</section>
 
@@ -102,18 +89,18 @@
 
 		<section>
 			<h3>Necessary files</h3>
-			<p>The <code>toc-progress</code> folder of the <code>plugin</code> folder has to be copied to the <code>plugin</code> folder of the Reveal.js presentation.</p>
+			<p>The <code>title-footer</code> folder of the <code>plugin</code> folder has to be copied to the <code>plugin</code> folder of the Reveal.js presentation.</p>
 		</section>
 
 		<section>
 			<h3>CSS</h3>
-			<p>The CSS of the Reveal.js-TOC-Progress plugin is included dynamically when it is initilizated. However, if we configure the presentation not to include the Reveal.js-TOC-Progress footer in the first page, this will be shown until the CSS is loaded dynamically, causing an ugly effect. To avoid it, include the CSS in the header of the Reveal.js presentation, with this line:</p>
-			<pre><code><link rel="stylesheet" href="plugin/toc-progress/toc-progress.css"></code></pre>
+			<p>The CSS of the Reveal.js-Title-Footer plugin is included dynamically when it is initialized. However, if we configure the presentation not to include the Reveal.js-Title-Footer footer in the first page, this will be shown until the CSS is loaded dynamically, causing an ugly effect. To avoid it, include the CSS in the header of the Reveal.js presentation, with this line:</p>
+			<pre><code><link rel="stylesheet" href="plugin/title-footer/title-footer.css"></code></pre>
 		</section>
 
 		<section>
 			<h3>Plugin initialization</h3>
-			<p>Include Reveal.js-TOC-Progress among the Reveal.js plugin initializations, like this:</p>
+			<p>Include Reveal.js-Title-Footer among the Reveal.js plugin initializations, like this:</p>
 			<pre><code>
 Reveal.initialize
 (
@@ -123,12 +110,11 @@ Reveal.initialize
         [
             ...
             {
-                src: 'plugin/toc-progress/toc-progress.js',
+                src: 'plugin/title-footer/title-footer.js',
                 async: true,
                 callback: function()
                 {
-                    toc_progress.initialize();
-                    toc_progress.create();
+                    title_footer.initialize();
                 }
             }
         ]
@@ -139,21 +125,16 @@ Reveal.initialize
 
 		<section>
 			<h3>Customization</h3>
-			<p>The <code>toc_progress.initialize</code> function can take two parameters:</p>
+			<p>The <code>title_footer.initialize</code> function can take two parameters:</p>
 			<ul>
-				<li><code>reducescroll</code>: if <code>'reduce'</code>, the font of the text of too long section or subsection lists is reduced to make the list fit in the footer; if <code>'scroll'</code> (default), the list will scroll when necessary.</li>
+				<li><code>title</code>: the title to show in the footer; if <code>null</code>, it will take the <code>h1</code>, <code>h2</code> and <code>h3</code> elements of the first slide.</li>
 				<li><code>background</code>: a string of the form <code>'rgba(0,255,0,0.1)'</code>, for the background colour of the footer.</li>
 			</ul>
 		</section>
 
 		<section>
-			<p>Including the <code>toc_progress.create</code> function in the Reveal.js initialization is not compulsory. If it is not included, the key <code>q</code> has to be pressed to create the footer.</p>
+			<p>For further customization (like making the footer a header, for example), arrange the <code>plugin/title-footer/title-footer.css</code> file accordingly.</p>
 		</section>
-
-		<section>
-			<p>For further customization (like making the footer a header, for example), arrange the <code>plugin/toc-progress/toc-progress.css</code> file accordingly.</p>
-		</section>
-
 
 	</section>
 
@@ -164,23 +145,18 @@ Reveal.initialize
 		</section>
 
 		<section>
-			<h3>Title organization</h3>
-			<p>The Reveal.js-TOC-Progress plugin works in the same manner as the Presentable plugin (<a href="http://fcfeibel.com/presentable">http://fcfeibel.com/presentable</a>). It takes the first <code>h1</code>, <code>h2</code> or <code>h3</code> tag from the slides as the titles for the table of contents. Main sections will be the titles of the first slide in each vertical section and secondary sections will be the rest of the titles.</p>
-		</section>
-
-		<section>
-			<h3>Title exclusion</h3>
-			<p>A title will be excluded from the table of contents if we put it a <code>class</code> attribute with a value of <code>no-toc-progress</code>.</p>
+			<h3>Title</h3>
+			<p>The Reveal.js-Title-Footer plugin takes the first <code>h1</code>, <code>h2</code> and <code>h3</code> tags from the first slide as the title, if another title is not explicitly passed as parameter in the initialization.</p>
 		</section>
 
 		<section>
 			<h3>Exclusion from slides</h3>
-			<p>Likewise, the Reveal.js-TOC-Progress footer will not be shown in a slide if the corresponding section has a <code>data-state</code> attribute with a value of <code>no-toc-progress</code>.</p>
+			<p>The Reveal.js-Title-Footer footer will not be shown in a slide if the corresponding section has a <code>data-state</code> attribute with a value of <code>no-title-footer</code>.</p>
 		</section>
 
 		<section>
-			<h3>Optional deletion and recreation at any time</h3>
-			<p>Pressing the <code>q</code> key causes the Reveal.js-TOC-Progress footer to disappear. Pressing the <code>q</code> key again creates it again.</p>
+			<h3>Compatibility with Reveal.js-TOC-Progress</h3>
+			<p>If the Reveal.js-TOC-Progress is also used, the Reveal.js-Title-Footer footer is shown just above it. For not showing any of them in a slide, include a <code>data-state</code> attribute with a value of <code>no-toc-progress</code> in the corresponding section.</p>
 		</section>
 
 	</section>
@@ -188,8 +164,8 @@ Reveal.initialize
 	<section>
 		<h2>Links</h2>
 		<ul>
-			<li>Source code on GitHub: <a href="https://github.com/e-gor/Reveal.js-TOC-Progress">https://github.com/e-gor/Reveal.js-TOC-Progress</a></li>
-			<li>Demo presentation with Reveal.js-TOC-Progress: <a href="http://e-gor.github.io/Reveal.js-TOC-Progress/demo">http://e-gor.github.io/Reveal.js-TOC-Progress/demo</a></li>
+			<li>Source code on GitHub: <a href="https://github.com/e-gor/Reveal.js-Title-Footer">https://github.com/e-gor/Reveal.js-Title-Footer</a></li>
+			<li>Demo presentation with Reveal.js-Title-Footer: <a href="http://e-gor.github.io/Reveal.js-Title-Footer/demo">http://e-gor.github.io/Reveal.js-Title-Footer/demo</a></li>
 		</ul>
 	</section>
 
@@ -201,8 +177,8 @@ Reveal.initialize
 	<section>
 
 		<section data-state="no-toc-progress">
-			<h1 class="no-toc-progress">Reveal.js-TOC-Progress</h1>
-			<h3>LaTeX Beamer-like progress indicator according to table of contents for Reveal.js HTML presentations</h3>
+			<h1 class="no-toc-progress">Reveal.js-Title-Footer</h1>
+			<h3>Footer showing title for Reveal.js HTML presentations</h3>
 			<p>
 				<small>Created by <a href="https://github.com/e-gor">Igor Leturia <em>e-gor</em></a> / <a href="http://twitter.com/ileturia">@ileturia</a> / <a href="http://eibar.org/blogak/e-gorblog">http://eibar.org/blogak/e-gorblog</a></small>
 			</p>
@@ -243,8 +219,8 @@ Reveal.initialize
 				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 
-				// TOC-Progress plugin
-				{ src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize(); toc_progress.create(); } }
+				// Title-Footer plugin
+				{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(); } }
 			]
 		});
 
