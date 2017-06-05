@@ -3,7 +3,7 @@ Reveal.js-Title-Footer
 
 Footer showing title for Reveal.js HTML presentations
 
-#Description
+# Description
 
 ## What is Reveal.js-Title-Footer?
 
