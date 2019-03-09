@@ -107,11 +107,7 @@ title_footer.initialize=function(title,background)
 	title_footer.setAttribute('style','background:'+this.background);
 	var title_footer_p=document.createElement('p');
 	title_footer.appendChild(title_footer_p);
-	var a_element=document.createElement('a');
-	a_element.setAttribute('href','#/0');
-	a_element.appendChild(document.createTextNode(this.title));
-	title_footer_p.appendChild(a_element);
+	title_footer_p.appendChild(document.createTextNode(this.title));
 	var div_class_reveal=document.querySelectorAll('.reveal')[0];
 	div_class_reveal.appendChild(title_footer);
 };
-
