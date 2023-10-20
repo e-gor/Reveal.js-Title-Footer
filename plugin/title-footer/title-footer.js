@@ -74,6 +74,11 @@ title_footer.initialize=function(title,background)
 	link.rel="stylesheet";
 	document.getElementsByTagName("head")[0].appendChild(link);
 
+	 // Add Date and Author
+	  this.date = arguments[0] || '';
+	  this.author = arguments[1] || '';
+ 
+
 	// Initialize properties according to parameters
 
 	this.background=background || 'rgba(0,0,0,0.1)';
@@ -113,5 +118,23 @@ title_footer.initialize=function(title,background)
 	title_footer_p.appendChild(a_element);
 	var div_class_reveal=document.querySelectorAll('.reveal')[0];
 	div_class_reveal.appendChild(title_footer);
-};
+
+
+
+	 // Add Date and Author to the footer
+	 var date_span = document.createElement('span');
+	 date_span.setAttribute('class', 'date');
+	 date_span.innerHTML = this.date;
+	 title_footer_p.appendChild(date_span);
+ 
+	 var author_span = document.createElement('span');
+	 author_span.setAttribute('class', 'author');
+	 author_span.innerHTML = 'By ' + this.author;
+	 title_footer_p.appendChild(author_span);
+ 
+	 var div_class_reveal = document.querySelectorAll('.reveal')[0];
+	 div_class_reveal.appendChild(title_footer);
+ };
+ 
+
 

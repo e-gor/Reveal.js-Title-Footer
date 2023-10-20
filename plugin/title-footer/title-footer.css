@@ -26,9 +26,18 @@
 	padding-bottom: 0.5vh;
 }
 
+#title-footer .author {
+    margin-left: 10px;
+}
+
+#title-footer .date {
+    margin-right: 10px;
+}
+
+
 /* Bottom position for the Title-Footer footer when both progress bar and TOC-Progress are visible */
 
-div.progress[style="display: block;"] ~ #title-footer
+div.progress[style='display: block;'] ~ #title-footer
 {
 	bottom: calc(3px + 10.5vh);
 }
@@ -50,16 +59,16 @@ div.progress[style="display: block;"] ~ #title-footer
 
 /* Bottom position for the Title-Footer footer when progress bar is visible */
 
-div.progress[style="display: block;"] ~ footer:last-of-type#title-footer
+div.progress[style='display: block;'] ~ footer#title-footer
 {
-	bottom: 3px;
+	bottom: calc(3px + 4.5vh);
 }
 
 /* Bottom position for the Title-Footer footer when neither progress bar nor TOC-Progress are visible */
 
-footer:last-of-type#title-footer
+footer#title-footer
 {
-	bottom: 0px;
+	bottom: 3px;
 }
 
 /* Make Title-Footer invisible if explicitly indicated */
